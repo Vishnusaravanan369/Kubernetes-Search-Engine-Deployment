@@ -16,3 +16,5 @@ This project demonstrates deploying an open-source search engine (Meilisearch) o
 
 ```bash
 kubectl apply -f meili.yaml
+
+http://65.1.130.58:32362
