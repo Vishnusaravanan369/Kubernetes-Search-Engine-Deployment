@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: meilisearch
+  namespace: search
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: meilisearch
+  template:
+    metadata:
+      labels:
+        app: meilisearch
+    spec:
+      containers:
+      - name: meilisearch
+        image: getmeili/meilisearch:v1.6
+        ports:
+        - containerPort: 7700
+        env:
+        - name: MEILI_NO_ANALYTICS
+          value: "true"
